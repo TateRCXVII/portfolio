@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import HeroCard from "@/components/dashboard/HeroCard";
 import TimeSpentCard from "@/components/dashboard/TimeSpentCard";
 import WorkShowcaseCard from "@/components/dashboard/WorkShowcaseCard";
+import ExperienceMapCard from "@/components/dashboard/ExperienceMapCard";
 import { staggerContainer, fadeInUp } from "@/lib/animations";
 import PageTransition from "@/components/shared/PageTransition";
 
@@ -48,12 +49,8 @@ export default function DashboardPage() {
           <WorkShowcaseCard />
         </motion.div>
 
-        <motion.div
-          variants={fadeInUp}
-          className="rounded-2xl border border-dark-border bg-dark-card p-6"
-          style={{ gridArea: "map" }}
-        >
-          <p className="text-sm text-dark-muted">Experience Map — Coming next</p>
+        <motion.div variants={fadeInUp} style={{ gridArea: "map" }}>
+          <ExperienceMapCard />
         </motion.div>
       </motion.div>
     </PageTransition>
