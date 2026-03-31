@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import HeroCard from "@/components/dashboard/HeroCard";
+import TimeSpentCard from "@/components/dashboard/TimeSpentCard";
 import { staggerContainer, fadeInUp } from "@/lib/animations";
 import PageTransition from "@/components/shared/PageTransition";
 
@@ -30,12 +31,8 @@ export default function DashboardPage() {
           <HeroCard onOpenTerminal={() => setTerminalOpen(true)} />
         </motion.div>
 
-        <motion.div
-          variants={fadeInUp}
-          className="rounded-2xl border border-dark-border bg-dark-card p-6"
-          style={{ gridArea: "time" }}
-        >
-          <p className="text-sm text-dark-muted">Time Spent — Coming next</p>
+        <motion.div variants={fadeInUp} style={{ gridArea: "time" }}>
+          <TimeSpentCard />
         </motion.div>
 
         <motion.div
