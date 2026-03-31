@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import HeroCard from "@/components/dashboard/HeroCard";
+import SkillMatrixCard from "@/components/dashboard/SkillMatrixCard";
 import TimeSpentCard from "@/components/dashboard/TimeSpentCard";
 import WorkShowcaseCard from "@/components/dashboard/WorkShowcaseCard";
 import ExperienceMapCard from "@/components/dashboard/ExperienceMapCard";
@@ -37,12 +38,8 @@ export default function DashboardPage() {
           <TimeSpentCard />
         </motion.div>
 
-        <motion.div
-          variants={fadeInUp}
-          className="rounded-2xl border border-dark-border bg-dark-card p-6"
-          style={{ gridArea: "skills" }}
-        >
-          <p className="text-sm text-dark-muted">Skill Matrix — Coming next</p>
+        <motion.div variants={fadeInUp} style={{ gridArea: "skills" }}>
+          <SkillMatrixCard />
         </motion.div>
 
         <motion.div variants={fadeInUp} style={{ gridArea: "showcase" }}>
