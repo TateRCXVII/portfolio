@@ -9,11 +9,13 @@ import WorkShowcaseCard from "@/components/dashboard/WorkShowcaseCard";
 import ExperienceMapCard from "@/components/dashboard/ExperienceMapCard";
 import { staggerContainer, fadeInUp } from "@/lib/animations";
 import PageTransition from "@/components/shared/PageTransition";
+import Terminal from "@/components/terminal/Terminal";
 
 export default function DashboardPage() {
   const [terminalOpen, setTerminalOpen] = useState(false);
 
   return (
+    <>
     <PageTransition className="min-h-screen bg-dark-bg pt-20">
       <motion.div
         className="mx-auto grid max-w-[1400px] gap-4 p-6"
@@ -51,5 +53,7 @@ export default function DashboardPage() {
         </motion.div>
       </motion.div>
     </PageTransition>
+      <Terminal isOpen={terminalOpen} onClose={() => setTerminalOpen(false)} />
+    </>
   );
 }
