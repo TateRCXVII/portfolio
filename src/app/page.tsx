@@ -1,7 +1,67 @@
+"use client";
+
+import { useState } from "react";
+import { motion } from "framer-motion";
+import HeroCard from "@/components/dashboard/HeroCard";
+import { staggerContainer, fadeInUp } from "@/lib/animations";
+import PageTransition from "@/components/shared/PageTransition";
+
 export default function DashboardPage() {
+  const [terminalOpen, setTerminalOpen] = useState(false);
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-dark-bg text-dark-text">
-      <h1 className="font-mono text-4xl">Hello Stranger</h1>
-    </div>
+    <PageTransition className="min-h-screen bg-dark-bg pt-20">
+      <motion.div
+        className="mx-auto grid max-w-[1400px] gap-4 p-6"
+        style={{
+          gridTemplateColumns: "1fr 1fr 1fr",
+          gridTemplateRows: "1fr 1fr",
+          gridTemplateAreas: `
+            "hero time skills"
+            "showcase showcase map"
+          `,
+          minHeight: "calc(100vh - 80px)",
+        }}
+        variants={staggerContainer}
+        initial="hidden"
+        animate="visible"
+      >
+        <motion.div variants={fadeInUp} style={{ gridArea: "hero" }}>
+          <HeroCard onOpenTerminal={() => setTerminalOpen(true)} />
+        </motion.div>
+
+        <motion.div
+          variants={fadeInUp}
+          className="rounded-2xl border border-dark-border bg-dark-card p-6"
+          style={{ gridArea: "time" }}
+        >
+          <p className="text-sm text-dark-muted">Time Spent — Coming next</p>
+        </motion.div>
+
+        <motion.div
+          variants={fadeInUp}
+          className="rounded-2xl border border-dark-border bg-dark-card p-6"
+          style={{ gridArea: "skills" }}
+        >
+          <p className="text-sm text-dark-muted">Skill Matrix — Coming next</p>
+        </motion.div>
+
+        <motion.div
+          variants={fadeInUp}
+          className="rounded-2xl border border-dark-border bg-dark-card p-6"
+          style={{ gridArea: "showcase" }}
+        >
+          <p className="text-sm text-dark-muted">Work Showcase — Coming next</p>
+        </motion.div>
+
+        <motion.div
+          variants={fadeInUp}
+          className="rounded-2xl border border-dark-border bg-dark-card p-6"
+          style={{ gridArea: "map" }}
+        >
+          <p className="text-sm text-dark-muted">Experience Map — Coming next</p>
+        </motion.div>
+      </motion.div>
+    </PageTransition>
   );
 }
