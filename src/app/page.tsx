@@ -4,6 +4,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import HeroCard from "@/components/dashboard/HeroCard";
 import TimeSpentCard from "@/components/dashboard/TimeSpentCard";
+import WorkShowcaseCard from "@/components/dashboard/WorkShowcaseCard";
 import { staggerContainer, fadeInUp } from "@/lib/animations";
 import PageTransition from "@/components/shared/PageTransition";
 
@@ -43,12 +44,8 @@ export default function DashboardPage() {
           <p className="text-sm text-dark-muted">Skill Matrix — Coming next</p>
         </motion.div>
 
-        <motion.div
-          variants={fadeInUp}
-          className="rounded-2xl border border-dark-border bg-dark-card p-6"
-          style={{ gridArea: "showcase" }}
-        >
-          <p className="text-sm text-dark-muted">Work Showcase — Coming next</p>
+        <motion.div variants={fadeInUp} style={{ gridArea: "showcase" }}>
+          <WorkShowcaseCard />
         </motion.div>
 
         <motion.div
