@@ -26,7 +26,7 @@ export default function IdentityCard({
   const inView = useInView(ref, { once: true, margin: "0px 0px -60px 0px" });
 
   // Dynamically resolve icon from lucide-react
-  const IconComponent = (Icons as Record<string, React.ComponentType<{ size?: number; className?: string }>>)[icon];
+  const IconComponent = (Icons as unknown as Record<string, React.ComponentType<{ size?: number; className?: string }>>)[icon];
 
   return (
     <motion.div
