@@ -1,9 +1,12 @@
 "use client";
 
 import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import PageTransition from "@/components/shared/PageTransition";
 import FilterPills from "@/components/projects/FilterPills";
 import ViewToggle from "@/components/projects/ViewToggle";
+import ProjectCard from "@/components/projects/ProjectCard";
+import ProjectListRow from "@/components/projects/ProjectListRow";
 import { getProjectsByCategory } from "@/data/projects";
 import type { ProjectCategory, ViewMode } from "@/data/types";
 
@@ -32,11 +35,60 @@ export default function ProjectsPage() {
           </div>
         </div>
 
-        {/* Content Area — will be populated by Task 14 */}
-        <div className="text-sm text-gray-400">
-          {filteredProjects.length} project
-          {filteredProjects.length !== 1 ? "s" : ""} — {viewMode} view
-        </div>
+        {/* Content Area */}
+        <AnimatePresence mode="wait">
+          {viewMode === "grid" ? (
+            <motion.div
+              key="grid"
+              layout
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.25 }}
+              className="grid grid-cols-3 gap-4 auto-rows-[200px]"
+            >
+              {filteredProjects.map((project) => (
+                <ProjectCard key={project.slug} project={project} />
+              ))}
+            </motion.div>
+          ) : (
+            <motion.div
+              key="list"
+              layout
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.25 }}
+            >
+              <table className="w-full border-collapse">
+                <thead>
+                  <tr className="border-b-2 border-gray-100">
+                    <th className="py-2 pl-4 pr-2 text-left text-xs font-semibold uppercase tracking-wider text-gray-400">
+                      Project
+                    </th>
+                    <th className="py-2 px-2 text-left text-xs font-semibold uppercase tracking-wider text-gray-400">
+                      Preview
+                    </th>
+                    <th className="py-2 px-2 text-left text-xs font-semibold uppercase tracking-wider text-gray-400">
+                      Category
+                    </th>
+                    <th className="py-2 px-2 text-left text-xs font-semibold uppercase tracking-wider text-gray-400">
+                      Status
+                    </th>
+                    <th className="py-2 pl-2 pr-4 text-right text-xs font-semibold uppercase tracking-wider text-gray-400">
+                      Updated
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {filteredProjects.map((project) => (
+                    <ProjectListRow key={project.slug} project={project} />
+                  ))}
+                </tbody>
+              </table>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
     </PageTransition>
   );
