@@ -18,6 +18,7 @@ function TypewriterLine({
   const [done, setDone] = useState(false);
   const indexRef = useRef(0);
 
+  // eslint-disable-next-line react-hooks/set-state-in-effect
   useEffect(() => {
     indexRef.current = 0;
     setDisplayed("");

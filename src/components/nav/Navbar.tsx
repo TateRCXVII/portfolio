@@ -48,6 +48,7 @@ export default function Navbar() {
             href={item.href}
             label={item.label}
             isActive={getIsActive(item.href)}
+            isDark={isDark}
           />
         ))}
       </nav>

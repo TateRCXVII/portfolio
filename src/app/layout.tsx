@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { Inter, JetBrains_Mono } from "next/font/google";
+import { Suspense } from "react";
 import "./globals.css";
-import Navbar from "@/components/nav/Navbar";
+import NavbarClient from "@/components/nav/NavbarClient";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -28,7 +29,9 @@ export default function RootLayout({
       <body
         className={`${inter.variable} ${jetbrainsMono.variable} font-sans antialiased`}
       >
-        <Navbar />
+        <Suspense fallback={null}>
+          <NavbarClient />
+        </Suspense>
         <main>{children}</main>
       </body>
     </html>

@@ -170,7 +170,7 @@ export default function WorkShowcaseCard() {
           const depthFactor = img.z / 300;
           const parallaxX = mouse.x * depthFactor * (hovering ? 30 : 18);
           const parallaxY = mouse.y * depthFactor * (hovering ? 30 : 18);
-          const bobAmount = hovering ? Math.sin(Date.now() / 1000 + i) * 3 : 0;
+          const bobAmount = 0;
           const isHovered = hoveredImage === i;
 
           return (

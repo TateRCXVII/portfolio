@@ -24,6 +24,7 @@ export default function TerminalInput({
   }, []);
 
   // Update ghost text whenever value changes
+  // eslint-disable-next-line react-hooks/set-state-in-effect
   useEffect(() => {
     if (value.startsWith("/") && value.length > 1) {
       const completion = onTabComplete(value);

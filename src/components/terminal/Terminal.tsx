@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState, useCallback } from "react";
+import { useEffect, useRef, useState, useCallback, useMemo } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { TerminalEngine } from "./TerminalEngine";
 import type { TerminalLine } from "./TerminalEngine";
@@ -15,15 +15,12 @@ interface TerminalProps {
 
 export default function Terminal({ isOpen, onClose }: TerminalProps) {
   const [lines, setLines] = useState<TerminalLine[]>([]);
-  const engineRef = useRef<TerminalEngine | null>(null);
+  const engine = useMemo(
+    () => new TerminalEngine((updated) => setLines(updated)),
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    []
+  );
   const scrollRef = useRef<HTMLDivElement>(null);
-
-  // Initialise engine once
-  if (!engineRef.current) {
-    engineRef.current = new TerminalEngine((updated) => {
-      setLines(updated);
-    });
-  }
 
   // Auto-scroll to bottom whenever lines change
   useEffect(() => {
@@ -43,7 +40,6 @@ export default function Terminal({ isOpen, onClose }: TerminalProps) {
   }, [isOpen, onClose]);
 
   const handleSubmit = useCallback((value: string) => {
-    const engine = engineRef.current!;
     // Check for clear sentinel
     const trimmed = value.trim().toLowerCase().replace(/^\//, "");
     if (trimmed === "clear") {
@@ -51,19 +47,19 @@ export default function Terminal({ isOpen, onClose }: TerminalProps) {
     } else {
       engine.execute(value);
     }
-  }, []);
+  }, [engine]);
 
   const handleHistoryUp = useCallback(() => {
-    return engineRef.current!.getHistoryUp();
-  }, []);
+    return engine.getHistoryUp();
+  }, [engine]);
 
   const handleHistoryDown = useCallback(() => {
-    return engineRef.current!.getHistoryDown();
-  }, []);
+    return engine.getHistoryDown();
+  }, [engine]);
 
   const handleTabComplete = useCallback((partial: string) => {
-    return engineRef.current!.getTabCompletion(partial);
-  }, []);
+    return engine.getTabCompletion(partial);
+  }, [engine]);
 
   return (
     <AnimatePresence>

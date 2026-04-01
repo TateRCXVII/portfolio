@@ -63,7 +63,7 @@ export default function TestimonialCard({ testimonials }: TestimonialCardProps) 
                 className="block leading-none text-gray-200 font-serif"
                 style={{ lineHeight: 1 }}
               >
-                "
+                &ldquo;
               </motion.span>
 
               {/* Truncated quote when inactive, full when active */}
