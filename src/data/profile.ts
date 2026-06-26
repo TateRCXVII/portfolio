@@ -2,146 +2,160 @@ import type { Profile } from "./types";
 
 export const profile: Profile = {
   name: "Tate Reynolds",
-  title: "Software Engineer",
-  hoursSpent: 14238,
+  title: "Senior AI Software Engineer",
+  location: "Salt Lake City, Utah",
+  thesis:
+    "I build AI-enabled developer systems, full-stack products, and internal platforms that reduce engineering friction and create measurable business leverage across fintech, legal tech, and SaaS.",
+
+  heroStats: [
+    {
+      label: "AI Trainings Delivered",
+      value: "10+",
+      detail:
+        "Led hands-on enablement sessions across agents, prompting, skills, MCP integrations, and production-safe AI workflows.",
+    },
+    {
+      label: "Developer Velocity Lift",
+      value: "4x",
+      detail:
+        "Improved contribution throughput and AI tool adoption through repo-ready agent scaffolding, review hooks, and team-specific workflows.",
+    },
+    {
+      label: "Projected Onboarding Lift",
+      value: "6x",
+      detail:
+        "Built a new onboarding experience designed to cut clicks dramatically and accelerate partner enrollment in open finance.",
+    },
+  ],
 
   identityCards: [
     {
-      icon: "Palette",
-      label: "Inspired by Art",
+      icon: "Bot",
+      label: "AI Systems Builder",
       description:
-        "I grew up drawing and painting before I ever touched a keyboard. That foundation shapes how I see design — as craft with intention, not decoration.",
-      tags: ["Fine Art", "Typography", "Generative Art", "Photography"],
+        "I build practical AI systems for engineers, not slideware. My work lives in hooks, prompts, eval habits, code review loops, documentation pipelines, and productized workflows that save teams real time.",
+      tags: ["Agents", "Hooks", "Prompts", "Developer Tooling"],
       backContent:
-        "From oil painting to pixel grids, my obsession with composition and color theory has never left me. I carry a sketchbook everywhere and fill it with everything from gesture drawings to system diagrams.",
+        "At Mastercard Open Finance, I helped teams move from curiosity about AI coding tools to repeatable systems. The goal was never novelty. It was adoption, quality, speed, and trust in environments where output still had to clear real security and review standards.",
     },
     {
-      icon: "Code2",
-      label: "Curiosity = Dev",
+      icon: "Layers3",
+      label: "Full-Stack Product Engineer",
       description:
-        "I taught myself to code because I was tired of handing off designs and wondering what happened to them. Now I build the things I design.",
-      tags: ["JavaScript", "React", "Next.js", "HTML/CSS"],
+        "I like work that spans architecture, frontend polish, backend reasoning, and delivery. I am strongest when a product needs both systems thinking and someone willing to finish the hard edges.",
+      tags: ["React", "Next.js", "Node.js", "Platform Design"],
       backContent:
-        "Learning to code changed how I design. Understanding constraints — what is hard to build, what is easy — made me a better collaborator and a sharper designer. I write real code, not just pseudo-code in Figma.",
+        "Across fintech, legal tech, and SaaS, I have worked on customer-facing apps, internal admin systems, payments, and AI experiences. I like owning real surfaces that users touch while still understanding the data, platform, and delivery concerns underneath them.",
     },
     {
-      icon: "MousePointer",
-      label: "Product Designer",
+      icon: "Mountain",
+      label: "Salt Lake Native",
       description:
-        "I design end-to-end product experiences — from discovery and research through interaction design, design systems, and developer handoff.",
-      tags: [
-        "UX Research",
-        "Interaction Design",
-        "Design Systems",
-        "Prototyping",
-      ],
+        "Salt Lake City shaped how I work. The Wasatch taught me patience, route finding, and respect for systems bigger than I am.",
+      tags: ["Wasatch", "Climbing", "Skiing", "Photography"],
       backContent:
-        "My design practice is grounded in research but expressed through craft. I believe beautiful things work better — not because beauty is the goal, but because the attention required to make something beautiful forces you to resolve every detail.",
+        "I have only ever lived in Salt Lake City, and I want the portfolio to feel rooted there. Alpine starts, canyon drives, granite, snow, and the structure of the mountains all influence how I think about craft, resilience, and long-horizon work.",
     },
     {
-      icon: "PersonStanding",
-      label: "People",
+      icon: "Music4",
+      label: "Creative Discipline",
       description:
-        "The best design work I have done happened in deep collaboration. I believe in critique, in disagreement, and in the compounding effect of good teams.",
-      tags: ["Mentorship", "Cross-functional", "Facilitation", "Writing"],
+        "Outside software, I write, make music, climb, ski, and take photos. Those are not side quests. They sharpen taste, timing, patience, and the ability to keep iterating until something feels true.",
+      tags: ["Writing", "Music", "Taste", "Craft"],
       backContent:
-        "I have been lucky to work with engineers, data scientists, marketers, and executives who taught me things design school never could. I try to pay that forward through mentorship, documentation, and writing about my practice.",
+        "The personal section of this site is intentionally light, but it matters. The same part of me that practices climbing movement, edits photos, or works through a musical phrase is the part that cares about architecture decisions, clean interfaces, and how systems feel to use.",
     },
   ],
 
   persona: [
-    { axis: "Empathetic", value: 85 },
-    { axis: "Adaptable", value: 75 },
-    { axis: "Creative", value: 90 },
-    { axis: "Curious", value: 95 },
-    { axis: "Detail-focused", value: 80 },
+    { axis: "Systems Thinking", value: 94 },
+    { axis: "Execution", value: 91 },
+    { axis: "Curiosity", value: 95 },
+    { axis: "Leadership", value: 87 },
+    { axis: "Craft", value: 89 },
   ],
 
   goals: [
-    "Build products that survive contact with real users — designed with rigor, shipped with care, and improved through feedback.",
-    "Grow into engineering leadership that bridges design and development, reducing the fidelity loss between vision and implementation.",
-    "Contribute to the practice of design through writing, open-source tooling, and mentorship that makes the next generation sharper.",
+    "Build AI tooling that makes excellent engineering work easier to start, safer to scale, and faster to ship.",
+    "Lead technical initiatives that connect product direction, architecture, and execution without losing momentum.",
+    "Publish more architecture diagrams, research notes, and system writeups that show how I think, not just what I shipped.",
   ],
 
   experience: [
     {
-      city: "Boston",
-      lat: 42.3601,
-      lng: -71.0589,
-      label: "Studied at Northeastern University — design & computer science.",
+      city: "Salt Lake City",
+      lat: 40.7608,
+      lng: -111.891,
+      label: "Home base for the work and the life: engineering, mountains, writing, and long projects.",
     },
     {
-      city: "New York",
-      lat: 40.7128,
-      lng: -74.006,
-      label: "Early career at a product agency — shipping fast, learning faster.",
+      city: "Wasatch Front",
+      lat: 40.6461,
+      lng: -111.8641,
+      label: "The range that shaped the portfolio mood: steep terrain, disciplined movement, and clear lines.",
     },
     {
-      city: "San Francisco",
-      lat: 37.7749,
-      lng: -122.4194,
-      label: "Joined Bolster — building AI cybersecurity products at scale.",
-    },
-    {
-      city: "Shanghai",
-      lat: 31.2304,
-      lng: 121.4737,
-      label: "Remote design sprint with an international engineering team.",
+      city: "Big Cottonwood",
+      lat: 40.6333,
+      lng: -111.8,
+      label: "Climbing, skiing, and the kind of repetition that builds real craft over time.",
     },
   ],
 
   testimonials: [
     {
-      name: "Maya Chen",
-      title: "Director of Product Management",
-      company: "Bolster",
+      name: "Engineering Manager",
+      title: "Open Finance Leadership",
+      company: "Mastercard",
       quote:
-        "Tate has a rare ability to hold both the big-picture strategy and the pixel-level detail simultaneously. The Signal redesign shipped on time, earned a G2 Leader badge, and generated exactly zero revision requests from the executive team — that never happens.",
+        "Tate brings depth, range, and real initiative. He contributes meaningfully in architecture conversations, asks the questions that improve the room, and consistently turns ideas into shipped work.",
     },
     {
-      name: "Dr. Amir Siddiqui",
-      title: "VP of AI Research",
-      company: "Bolster",
+      name: "Principal Engineer",
+      title: "AI Enablement Partner",
+      company: "Mastercard",
       quote:
-        "What sets Tate apart is that he understands the ML pipeline well enough to design for it. When the Abuse Mailbox misclassification issue surfaced, he diagnosed it as a design problem before any engineer did — and his fix improved model performance metrics we had been chasing for a year.",
+        "Tate is unusually strong at translating fast-moving AI tooling into workflows a broader engineering organization can actually use. His training style is clear, practical, and grounded in real delivery constraints.",
     },
     {
-      name: "Rachel Torres",
-      title: "VP of Design",
-      company: "Andreessen Horowitz",
+      name: "Product Collaborator",
+      title: "Cross-Functional Partner",
+      company: "Fintech Platform Team",
       quote:
-        "Tate's portfolio demonstrates something rare at his career stage: a consistent point of view. His work is not a collection of style exercises — it is evidence of a designer who has developed a philosophy and applies it with discipline.",
+        "He can take an abstract initiative, break it into actionable work, ask the right product questions, and then go build the thing. That combination is rare and it makes him valuable early in a project.",
     },
     {
-      name: "Jordan Park",
-      title: "Product Designer",
-      company: "Figma",
+      name: "Teammate",
+      title: "Software Engineer",
+      company: "Platform Engineering",
       quote:
-        "I had the chance to collaborate with Tate on a design system audit and his process was meticulous without being precious. He gave hard feedback clearly, received it gracefully, and shipped work that made both our systems better.",
+        "Tate is thoughtful, personable, and technically sharp. He raises the level of the team without making collaboration feel heavy, and people trust him with both execution and judgment.",
     },
   ],
 
   skills: [
-    { name: "Interaction Design", score: 18 },
-    { name: "Visual Design", score: 15 },
-    { name: "Design Systems", score: 14 },
-    { name: "UX Research", score: 12 },
-    { name: "Prototyping", score: 10 },
-    { name: "Front-end Development", score: 9 },
-    { name: "Data Visualization", score: 8 },
-    { name: "Product Strategy", score: 7 },
-    { name: "Motion Design", score: 5 },
-    { name: "Brand Design", score: 2 },
+    { name: "AI Developer Tooling", score: 18 },
+    { name: "Full-Stack Product Work", score: 17 },
+    { name: "React / Next.js", score: 15 },
+    { name: "Architecture & Systems", score: 14 },
+    { name: "Developer Experience", score: 13 },
+    { name: "Prompt / Agent Design", score: 12 },
+    { name: "Platform Integration", score: 11 },
+    { name: "Technical Writing", score: 9 },
+    { name: "Data / Research", score: 7 },
+    { name: "Quant Experiments", score: 4 },
   ],
 
   tools: [
-    "Figma",
-    "ProtoPie",
-    "Framer",
-    "JavaScript",
-    "jQuery",
-    "HTML",
-    "CSS",
-    "Adobe CC",
+    "Codex",
+    "Claude Code",
+    "GitHub Copilot",
+    "OpenAI API",
+    "TypeScript",
+    "Python",
+    "React",
+    "Next.js",
+    "Node.js",
+    "Docker",
   ],
 };

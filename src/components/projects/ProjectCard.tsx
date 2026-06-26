@@ -11,11 +11,11 @@ interface ProjectCardProps {
 
 // Gradient colors per category for the thumbnail placeholder
 const categoryGradients: Record<string, string> = {
-  dashboard: "from-blue-900 via-indigo-800 to-blue-700",
-  app: "from-purple-900 via-violet-800 to-purple-700",
-  website: "from-teal-900 via-emerald-800 to-teal-700",
-  visual: "from-rose-900 via-pink-800 to-rose-700",
-  fun: "from-amber-900 via-orange-800 to-amber-700",
+  "ai-systems": "from-emerald-950 via-zinc-900 to-emerald-800",
+  platform: "from-slate-950 via-slate-800 to-sky-900",
+  "product-engineering": "from-zinc-950 via-stone-800 to-amber-900",
+  research: "from-blue-950 via-indigo-900 to-cyan-900",
+  security: "from-rose-950 via-zinc-900 to-rose-900",
 };
 
 export default function ProjectCard({ project }: ProjectCardProps) {
@@ -94,13 +94,20 @@ export default function ProjectCard({ project }: ProjectCardProps) {
 
         {/* Card Footer */}
         <div className="flex items-end justify-between px-4 pt-3 pb-4">
-          <span
-            className={`font-semibold text-white leading-tight ${
-              isFeatured ? "text-xl" : "text-sm"
-            }`}
-          >
-            {project.name}
-          </span>
+          <div className="pr-3">
+            <span
+              className={`block font-semibold leading-tight text-white ${
+                isFeatured ? "text-xl" : "text-sm"
+              }`}
+            >
+              {project.name}
+            </span>
+            {isFeatured && (
+              <p className="mt-2 max-w-md text-sm leading-relaxed text-white/65">
+                {project.summary}
+              </p>
+            )}
+          </div>
 
           {/* "Discover" button slides up from below on hover */}
           <div className="overflow-hidden">

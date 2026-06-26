@@ -241,7 +241,7 @@ export default function WorkShowcaseCard() {
               "0 4px 20px rgba(255,255,255,0.15)";
           }}
         >
-          Who are you?
+          What do you build?
         </button>
 
         {showResponse && (
@@ -261,7 +261,7 @@ export default function WorkShowcaseCard() {
               lineHeight: 1.5,
             }}
           >
-            <TypewriterText text="I build things for the web." />
+            <TypewriterText text="AI-enabled tools, fintech products, and systems that make engineers faster." />
           </div>
         )}
       </div>
@@ -280,7 +280,7 @@ export default function WorkShowcaseCard() {
           pointerEvents: "none",
         }}
       >
-        Work Showcase
+        Featured Work
       </div>
     </div>
   );

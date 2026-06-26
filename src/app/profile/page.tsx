@@ -13,7 +13,10 @@ export default function ProfilePage() {
   return (
     <PageTransition className="min-h-screen bg-white pt-20">
       <div className="mx-auto max-w-[1400px] px-8 py-6">
-        <h1 className="mb-8 text-5xl font-bold">My Profile</h1>
+        <h1 className="mb-3 text-5xl font-bold">About</h1>
+        <p className="mb-8 max-w-3xl text-sm leading-relaxed text-gray-600">
+          {profile.thesis}
+        </p>
 
         {/* Identity cards - 4 columns */}
         <div className="mb-8 grid grid-cols-4 gap-4">

@@ -8,11 +8,11 @@ function pad(str: string, length: number): string {
 
 registerCommand("work", "Browse selected projects", () => {
   const header =
-    pad("PROJECT", 28) + pad("TYPE", 12) + "STATUS";
-  const divider = "─".repeat(28) + "─".repeat(12) + "─".repeat(10);
+    pad("PROJECT", 28) + pad("TYPE", 22) + "STATUS";
+  const divider = "─".repeat(28) + "─".repeat(22) + "─".repeat(12);
 
   const rows = projects.slice(0, 8).map((p) => {
-    return pad(p.name, 28) + pad(p.category, 12) + p.status;
+    return pad(p.name, 28) + pad(p.category, 22) + p.status;
   });
 
   const output = [header, divider, ...rows].join("\n");

@@ -21,9 +21,12 @@ export default function ProjectsPage() {
       <div className="mx-auto max-w-7xl px-8 py-12">
         {/* Page Header */}
         <div className="mb-10 flex flex-col gap-6">
-          <h1 className="text-5xl font-bold tracking-tight text-black">
-            Project
-          </h1>
+          <h1 className="text-5xl font-bold tracking-tight text-black">Projects</h1>
+          <p className="max-w-3xl text-sm leading-relaxed text-gray-600">
+            A mix of shipped product work, AI enablement systems, public code, and
+            active research. Proprietary work is represented through architecture,
+            decisions, and outcomes rather than internal code.
+          </p>
 
           {/* Filters + View Toggle */}
           <div className="flex items-center justify-between gap-4 flex-wrap">

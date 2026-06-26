@@ -1,10 +1,10 @@
 "use client";
 
 import { useState } from "react";
-import type { CaseStudy } from "@/data/types";
+import type { LibraryEntry } from "@/data/types";
 
 interface TableOfContentsProps {
-  toc: CaseStudy["toc"];
+  toc: LibraryEntry["toc"];
   onNavigate: (id: string) => void;
 }
 

@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import MatrixRain from "./MatrixRain";
+import { profile } from "@/data/profile";
 
 interface HeroCardProps {
   onOpenTerminal: () => void;
@@ -36,9 +37,9 @@ export default function HeroCard({ onOpenTerminal }: HeroCardProps) {
             }}
             transition={{ duration: 0.3 }}
           >
-            Hello
+            Tate
             <br />
-            Stranger
+            Reynolds
           </motion.h1>
         </div>
 
@@ -47,9 +48,9 @@ export default function HeroCard({ onOpenTerminal }: HeroCardProps) {
           initial={{ opacity: 0.6 }}
           animate={{ opacity: isHovered ? 1 : 0.6 }}
         >
-          let stranger = user.current();{" "}
-          <span className="text-accent-green">&gt;</span> The terminal is open.
-          Type nothing. Just explore.
+          {profile.title} <span className="text-accent-green">&gt;</span> AI
+          systems, full-stack product work, and architecture notes from Salt Lake
+          City.
           <motion.span
             className="inline-block"
             animate={{ opacity: [1, 0] }}

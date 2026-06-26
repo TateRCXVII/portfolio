@@ -6,11 +6,11 @@ import type { ProjectCategory } from "@/data/types";
 
 const categories: ProjectCategory[] = [
   "all",
-  "dashboard",
-  "app",
-  "website",
-  "visual",
-  "fun",
+  "ai-systems",
+  "platform",
+  "product-engineering",
+  "research",
+  "security",
 ];
 
 interface FilterPillsProps {

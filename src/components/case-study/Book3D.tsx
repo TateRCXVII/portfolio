@@ -2,14 +2,14 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import type { CaseStudy } from "@/data/types";
+import type { LibraryEntry } from "@/data/types";
 
 const BOOK_WIDTH = 180;
 const BOOK_HEIGHT = 320;
 const BOOK_DEPTH = 50;
 
 interface Book3DProps {
-  study: CaseStudy;
+  study: LibraryEntry;
   index: number;
   isHovered: boolean;
   onHover: (index: number | null) => void;
@@ -23,7 +23,7 @@ export default function Book3D({
   onHover,
   hoveredIndex,
 }: Book3DProps) {
-  const { bookColor, title, slug } = study;
+  const { bookColor, title, slug, category } = study;
 
   const isAnotherHovered = hoveredIndex !== null && !isHovered;
   const slideX =
@@ -134,6 +134,18 @@ export default function Book3D({
               }}
             >
               {title}
+            </p>
+            <p
+              style={{
+                fontSize: 10,
+                letterSpacing: "0.16em",
+                textTransform: "uppercase",
+                color: "rgba(255,255,255,0.7)",
+                marginTop: 10,
+                zIndex: 1,
+              }}
+            >
+              {category.replace("-", " ")}
             </p>
           </motion.div>
 

@@ -13,7 +13,7 @@ export default function ExperienceMapCard() {
       <div className="mb-4 flex items-center gap-2">
         <Globe className="h-4 w-4 text-dark-muted" />
         <span className="text-xs font-semibold uppercase tracking-widest text-dark-muted">
-          My Experience
+          Salt Lake / Wasatch
         </span>
       </div>
 

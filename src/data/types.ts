@@ -1,51 +1,79 @@
+export interface ProjectArtifact {
+  label: string;
+  kind: "repo" | "writeup" | "diagram" | "demo" | "notes";
+  href: string;
+  note?: string;
+}
+
+export interface ProjectArchitecture {
+  title: string;
+  summary: string;
+  bullets: string[];
+}
+
+export interface ProjectDecision {
+  title: string;
+  summary: string;
+}
+
+export interface CodeHighlight {
+  title: string;
+  file?: string;
+  snippet: string;
+  commentary: string;
+}
+
 export interface Project {
   slug: string;
   name: string;
-  category: "dashboard" | "app" | "website" | "visual" | "fun";
+  category:
+    | "ai-systems"
+    | "platform"
+    | "product-engineering"
+    | "research"
+    | "security";
   company?: string;
-  status: "shipped" | "concept" | "live-demo";
+  status: "shipped" | "in-progress" | "concept" | "live-demo";
   updatedAt: string;
-  description: string;
-  thumbnail: string;
-  images: string[];
+  summary: string;
+  headline: string;
   featured?: boolean;
+  confidentiality: "public" | "redacted" | "internal";
   overview: {
-    type: string;
     role: string;
-    tool: string;
-    contribution: string;
+    scope: string;
+    stack: string;
+    ownership: string;
   };
   snapshot: {
     goal: string;
     challenge: string;
     outcome: string;
   };
-  designFocus: {
-    label: string;
-    leftLabel: string;
-    rightLabel: string;
-    current: number;
-    target: number;
-  }[];
-  analogous?: {
-    title: string;
-    image: string;
-    pros: string;
-    cons: string;
-  }[];
+  metrics: string[];
+  tags: string[];
+  artifactLinks: ProjectArtifact[];
+  architecture?: ProjectArchitecture[];
+  decisions?: ProjectDecision[];
+  codeHighlights?: CodeHighlight[];
 }
 
-export interface CaseStudy {
+export interface LibraryEntry {
   slug: string;
   title: string;
   subtitle?: string;
+  category: "architecture-diagram" | "technical-essay" | "research-note";
   bookColor: {
     spine: string;
     cover: string;
     accent: string;
     pages: string;
   };
-  coverArt: string;
+  metadata: {
+    format: string;
+    context: string;
+    takeaway: string;
+  };
   toc: {
     section: string;
     title: string;
@@ -55,14 +83,19 @@ export interface CaseStudy {
     id: string;
     heading: string;
     body: string;
-    images?: string[];
   }[];
 }
 
 export interface Profile {
   name: string;
   title: string;
-  hoursSpent: number;
+  location: string;
+  thesis: string;
+  heroStats: {
+    label: string;
+    value: string;
+    detail: string;
+  }[];
   identityCards: {
     icon: string;
     description: string;

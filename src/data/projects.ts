@@ -1,972 +1,462 @@
 import type { Project } from "./types";
 
 export const projects: Project[] = [
-  // ── Dashboards ──────────────────────────────────────────────────────────────
   {
-    slug: "signal",
-    name: "Signal",
-    category: "dashboard",
-    company: "Bolster",
+    slug: "mastercard-ai-enablement",
+    name: "Open Finance AI Enablement",
+    category: "ai-systems",
+    company: "Mastercard",
     status: "shipped",
-    updatedAt: "2024-11",
-    description:
-      "AI-powered cybersecurity platform that detects, classifies, and remediates phishing and brand-impersonation threats in real time.",
-    thumbnail: "/images/projects/signal/thumbnail.png",
-    images: [
-      "/images/projects/signal/01.png",
-      "/images/projects/signal/02.png",
-      "/images/projects/signal/03.png",
-    ],
+    updatedAt: "2026-04",
+    summary:
+      "Built repo-ready AI workflows, training, and guardrails that made coding agents useful on real fintech teams instead of staying in demo mode.",
+    headline:
+      "AI tooling program for engineering teams working in a regulated open finance environment.",
     featured: true,
+    confidentiality: "redacted",
     overview: {
-      type: "Enterprise SaaS Dashboard",
-      role: "Lead Product Designer",
-      tool: "Figma, ProtoPie, FigJam",
-      contribution:
-        "End-to-end design — research, IA, interaction design, design system, and handoff.",
+      role: "Software Engineer II, AI enablement lead",
+      scope: "Developer productivity, repo integrations, training, quality controls",
+      stack: "Codex, Claude Code, GitHub Copilot, hooks, prompts, internal tooling",
+      ownership:
+        "Owned AI workflow rollout, onboarding assets, skills/instructions patterns, and practical guidance for production-safe usage.",
     },
     snapshot: {
-      goal: "Give security analysts a single pane of glass to monitor, triage, and act on AI-detected phishing threats without switching between disparate tools.",
+      goal: "Turn AI coding tools into a durable engineering advantage across multiple teams, repos, and delivery contexts.",
       challenge:
-        "High information density combined with time-critical workflows meant that cognitive overload was a constant risk. We needed to surface the most urgent signals without burying analysts in noise.",
+        "Teams needed higher output without losing review quality, security posture, or confidence in generated code. Generic prompting was not enough.",
       outcome:
-        "Shipped to enterprise customers, reducing mean time-to-triage by ~40 % and earning the product a G2 Leader badge in brand protection.",
+        "Delivered a reusable enablement layer with repo-specific assets, training, and review-agent patterns that materially increased adoption and contribution velocity.",
     },
-    designFocus: [
+    metrics: [
+      "10+ internal trainings delivered across prompting, agents, skills, hooks, and MCP integrations",
+      "4x lift in tool adoption and contribution throughput across enabled workflows",
+      "MR and security review agents integrated to safeguard higher AI-assisted output",
+    ],
+    tags: [
+      "Agents",
+      "Developer Experience",
+      "Fintech",
+      "Repo Automation",
+      "Training",
+    ],
+    artifactLinks: [
       {
-        label: "Information Architecture",
-        leftLabel: "Simple",
-        rightLabel: "Complex",
-        current: 4,
-        target: 4,
+        label: "Redacted System Writeup",
+        kind: "writeup",
+        href: "/projects/mastercard-ai-enablement",
+        note: "Public-safe summary of the rollout and workflow model.",
       },
       {
-        label: "Visual Density",
-        leftLabel: "Sparse",
-        rightLabel: "Dense",
-        current: 3,
-        target: 4,
-      },
-      {
-        label: "Interaction Fidelity",
-        leftLabel: "Low",
-        rightLabel: "High",
-        current: 5,
-        target: 5,
-      },
-      {
-        label: "Accessibility",
-        leftLabel: "Basic",
-        rightLabel: "WCAG AAA",
-        current: 4,
-        target: 5,
-      },
-      {
-        label: "Design System Coverage",
-        leftLabel: "Ad-hoc",
-        rightLabel: "Systematic",
-        current: 5,
-        target: 5,
+        label: "Architecture Decisions",
+        kind: "notes",
+        href: "/projects/mastercard-ai-enablement",
+        note: "Shows enablement structure without exposing internal code.",
       },
     ],
-    analogous: [
+    architecture: [
       {
-        title: "Splunk SIEM",
-        image: "/images/analogous/splunk.png",
-        pros: "Powerful query language; highly configurable dashboards.",
-        cons: "Steep learning curve; visual hierarchy is often overwhelming for new analysts.",
+        title: "Repo-ready AI onboarding layer",
+        summary:
+          "Each codebase received instructions, skills, prompts, and hooks shaped around the repo instead of relying on generic assistant behavior.",
+        bullets: [
+          "Repo context was front-loaded so assistants were useful immediately after setup.",
+          "Workflows were connected to merge request review and security checks to control risk.",
+          "Training material reinforced the same patterns that the tooling encoded.",
+        ],
       },
       {
-        title: "Datadog",
-        image: "/images/analogous/datadog.png",
-        pros: "Excellent real-time monitoring and alerting; clean widget system.",
-        cons: "Security-specific workflows are bolted on rather than native.",
+        title: "Adoption loop",
+        summary:
+          "The program was treated like product work: onboarding, training, usage, feedback, and refinement instead of one-time enablement.",
+        bullets: [
+          "Teams were trained on specific use cases, not just tool features.",
+          "Assets were refined from real repo friction and team feedback.",
+          "Quality controls were part of the workflow, not an afterthought.",
+        ],
+      },
+    ],
+    decisions: [
+      {
+        title: "Bias toward repo-specific workflows over generic prompting",
+        summary:
+          "The quickest way to make assistants trustworthy was to encode context, standards, and expectations close to the codebase.",
       },
       {
-        title: "Palo Alto Cortex XDR",
-        image: "/images/analogous/cortex.png",
-        pros: "Deep threat-correlation engine; good incident timeline view.",
-        cons: "UI is dense and requires extensive training; limited customization for non-SOC roles.",
+        title: "Treat output quality as a systems problem",
+        summary:
+          "Review agents and security hooks were required complements to higher generation speed so the org could scale usage safely.",
+      },
+    ],
+    codeHighlights: [
+      {
+        title: "Agent workflow pattern",
+        snippet:
+          "1. Load repo instructions and standards.\n2. Pull ticket and documentation context.\n3. Propose a plan before editing.\n4. Run implementation with review hooks enabled.\n5. Generate test notes, MR summary, and follow-up tasks.",
+        commentary:
+          "The real value was not a single prompt. It was the repeatable workflow around context, edits, checks, and delivery.",
       },
     ],
   },
   {
-    slug: "bolster-ai",
-    name: "Bolster AI",
-    category: "dashboard",
-    company: "Bolster",
-    status: "concept",
-    updatedAt: "2024-06",
-    description:
-      "Next-generation AI assistant layer for the Bolster platform, letting analysts query threat data in natural language and auto-generate takedown reports.",
-    thumbnail: "/images/projects/bolster-ai/thumbnail.png",
-    images: [
-      "/images/projects/bolster-ai/01.png",
-      "/images/projects/bolster-ai/02.png",
-    ],
+    slug: "partner-onboarding-platform",
+    name: "Partner Onboarding Platform",
+    category: "product-engineering",
+    company: "Mastercard",
+    status: "in-progress",
+    updatedAt: "2026-04",
+    summary:
+      "New client-facing onboarding experience for open finance partners designed to dramatically reduce friction, speed up enrollment, and improve sales motion.",
+    headline:
+      "A modern onboarding surface built to compete directly in a complex open finance market.",
+    featured: true,
+    confidentiality: "redacted",
     overview: {
-      type: "AI Feature Concept",
-      role: "Product Designer",
-      tool: "Figma, FigJam",
-      contribution:
-        "Concept exploration, conversation UX, and prompt-engineering patterns.",
+      role: "Senior engineer on architecture and client application delivery",
+      scope: "Architecture, client UI, onboarding flow design, execution leadership",
+      stack: "React, TypeScript, platform integrations, internal APIs",
+      ownership:
+        "Led architecture direction and owned the customer-facing application experience end to end.",
     },
     snapshot: {
-      goal: "Reduce analyst toil by letting them ask questions in plain English instead of building complex filter queries.",
+      goal: "Compress partner onboarding into a faster, clearer path that reduces clicks, removes ambiguity, and gets customers live sooner.",
       challenge:
-        "Designing for LLM uncertainty — communicating confidence levels and handling ambiguous queries gracefully without eroding trust.",
+        "The domain is operationally dense, competitive, and tightly coupled to existing platform behavior. The new flow had to feel simpler without hiding important complexity.",
       outcome:
-        "Concept approved for roadmap inclusion; currently in engineering scoping phase.",
+        "Still in progress, with internal projections showing substantially faster onboarding and a meaningful increase in sales leverage once released.",
     },
-    designFocus: [
+    metrics: [
+      "Projected 6x faster onboarding relative to existing partner flows",
+      "Projected 5x sales lift through a more competitive customer entry point",
+      "Reduced click-path complexity across core onboarding actions",
+    ],
+    tags: [
+      "React",
+      "Fintech",
+      "Architecture",
+      "Customer Experience",
+      "Execution",
+    ],
+    artifactLinks: [
       {
-        label: "Conversational UX",
-        leftLabel: "Form-based",
-        rightLabel: "Chat-native",
-        current: 5,
-        target: 5,
+        label: "Redacted Architecture Summary",
+        kind: "diagram",
+        href: "/projects/partner-onboarding-platform",
+        note: "Public-safe system overview and key tradeoffs.",
       },
       {
-        label: "Transparency",
-        leftLabel: "Black-box",
-        rightLabel: "Explainable",
-        current: 4,
-        target: 5,
+        label: "Delivery Notes",
+        kind: "notes",
+        href: "/projects/partner-onboarding-platform",
+        note: "How architecture and UX were balanced in a high-stakes flow.",
+      },
+    ],
+    architecture: [
+      {
+        title: "Customer-facing onboarding flow",
+        summary:
+          "The application was designed to reduce visible complexity while still coordinating with a large existing platform underneath.",
+        bullets: [
+          "Flow structure optimized around fewer decisions and less repeated data entry.",
+          "UI choices were made alongside platform and integration constraints, not after them.",
+          "Architecture had to support future extension without reintroducing the original friction.",
+        ],
+      },
+    ],
+    decisions: [
+      {
+        title: "Build the client experience around task completion, not platform structure",
+        summary:
+          "The product should feel like a guided sequence for the customer, even if backend dependencies are broader and messier.",
       },
       {
-        label: "Error Handling",
-        leftLabel: "Silent",
-        rightLabel: "Graceful",
-        current: 3,
-        target: 5,
-      },
-      {
-        label: "Integration Depth",
-        leftLabel: "Overlay",
-        rightLabel: "Native",
-        current: 3,
-        target: 4,
-      },
-      {
-        label: "Onboarding",
-        leftLabel: "None",
-        rightLabel: "Guided",
-        current: 4,
-        target: 4,
+        title: "Own UI and architecture together",
+        summary:
+          "Separating architecture decisions from the customer flow would have created fidelity loss and hidden cost in later implementation.",
       },
     ],
   },
   {
-    slug: "takedown-visibility-center",
-    name: "Takedown Visibility Center",
-    category: "dashboard",
-    company: "Bolster",
+    slug: "react-mfe-angular-shell",
+    name: "React Micro-Frontend in Angular Shell",
+    category: "platform",
+    company: "Mastercard",
     status: "shipped",
-    updatedAt: "2023-09",
-    description:
-      "Real-time dashboard tracking the lifecycle of domain takedown requests — from submission through ISP response to final removal.",
-    thumbnail: "/images/projects/takedown-visibility-center/thumbnail.png",
-    images: [
-      "/images/projects/takedown-visibility-center/01.png",
-      "/images/projects/takedown-visibility-center/02.png",
-    ],
+    updatedAt: "2025-11",
+    summary:
+      "Integrated a modern React micro-frontend into a critical legacy Angular platform without breaking auth, routing, session behavior, or delivery cadence.",
+    headline:
+      "A bridge between modern frontend delivery and a business-critical legacy application.",
+    confidentiality: "redacted",
     overview: {
-      type: "Operational Dashboard",
-      role: "Product Designer",
-      tool: "Figma",
-      contribution:
-        "Research, UX design, visual design, and developer handoff.",
+      role: "Software engineer",
+      scope: "Frontend architecture, integration strategy, release coordination",
+      stack: "React, Angular, TypeScript, Module Federation, shared platform services",
+      ownership:
+        "Worked on architecture and implementation needed to make the new React experience coexist with a complex legacy shell.",
     },
     snapshot: {
-      goal: "Give customers full visibility into every takedown request so they can answer support tickets without contacting Bolster.",
+      goal: "Create a path for modern React product surfaces inside a critical Angular application without forcing a full rewrite.",
       challenge:
-        "Status taxonomies across hundreds of ISPs and registrars vary wildly; normalizing them into a clear, customer-friendly status model required significant data modeling collaboration.",
+        "State, packages, auth, session management, routing, deployment behavior, and design consistency all crossed framework boundaries.",
       outcome:
-        "Reduced customer-facing support tickets about takedown status by 60 % within one quarter of launch.",
+        "Delivered a workable integration model that let new product work ship in React while respecting legacy platform realities.",
     },
-    designFocus: [
+    metrics: [
+      "Enabled new React delivery inside a critical legacy product",
+      "Handled cross-framework concerns spanning auth, session management, and routing",
+      "Reduced rewrite pressure by creating an incremental modernization path",
+    ],
+    tags: [
+      "Angular",
+      "React",
+      "Module Federation",
+      "Modernization",
+      "System Integration",
+    ],
+    artifactLinks: [
       {
-        label: "Status Clarity",
-        leftLabel: "Opaque",
-        rightLabel: "Transparent",
-        current: 5,
-        target: 5,
+        label: "Redacted Integration Writeup",
+        kind: "writeup",
+        href: "/projects/react-mfe-angular-shell",
+        note: "Public-safe account of the migration and integration challenges.",
       },
+    ],
+    architecture: [
       {
-        label: "Data Freshness",
-        leftLabel: "Stale",
-        rightLabel: "Real-time",
-        current: 4,
-        target: 5,
+        title: "Incremental modernization path",
+        summary:
+          "The project created a bridge layer so new React surfaces could live inside the legacy application rather than waiting on a risky rewrite.",
+        bullets: [
+          "Integration had to preserve shared session and authentication behavior.",
+          "Routing and state boundaries needed to feel coherent to users.",
+          "Release coordination mattered as much as code structure.",
+        ],
       },
+    ],
+    decisions: [
       {
-        label: "Filtering Power",
-        leftLabel: "Basic",
-        rightLabel: "Advanced",
-        current: 4,
-        target: 4,
-      },
-      {
-        label: "Export Capability",
-        leftLabel: "None",
-        rightLabel: "Full",
-        current: 3,
-        target: 4,
-      },
-      {
-        label: "Mobile Responsiveness",
-        leftLabel: "Desktop-only",
-        rightLabel: "Responsive",
-        current: 2,
-        target: 3,
+        title: "Optimize for coexistence first, replacement later",
+        summary:
+          "The right first move was not a rewrite. It was a stable path for incremental product delivery with bounded risk.",
       },
     ],
   },
   {
-    slug: "checkphish-ai",
-    name: "CheckPhish AI",
-    category: "dashboard",
-    company: "Bolster",
+    slug: "caret-ai-legal-assistant",
+    name: "CARET AI Legal Assistant",
+    category: "ai-systems",
+    company: "CARET",
     status: "shipped",
-    updatedAt: "2023-04",
-    description:
-      "Self-serve URL scanning portal powered by Bolster's AI engine, used by security researchers and SMBs to instantly assess phishing risk.",
-    thumbnail: "/images/projects/checkphish-ai/thumbnail.png",
-    images: [
-      "/images/projects/checkphish-ai/01.png",
-      "/images/projects/checkphish-ai/02.png",
-    ],
+    updatedAt: "2024-05",
+    summary:
+      "Early AI legal workflow assistant built around case documents, project context, and grounded prompting before legal AI became a crowded category.",
+    headline:
+      "A document-grounded assistant for legal research and case work in the GPT-3 era.",
+    featured: true,
+    confidentiality: "redacted",
     overview: {
-      type: "Consumer Security Tool",
-      role: "Product Designer",
-      tool: "Figma, ProtoPie",
-      contribution: "UX/UI redesign and onboarding flow.",
+      role: "Associate software engineer",
+      scope: "AI integration, backend + UI collaboration, contextual response workflows",
+      stack: "LLM APIs, document metadata, application backend, frontend integration",
+      ownership:
+        "Built and integrated the assistant experience across the application stack, including prompt logic and context selection behavior.",
     },
     snapshot: {
-      goal: "Lower the barrier to entry for non-enterprise users to leverage Bolster's scan engine for ad-hoc URL checks.",
+      goal: "Help legal users ask natural questions and receive grounded answers based on case documents and project context already inside the platform.",
       challenge:
-        "Balancing simplicity for casual users with depth for power users without fragmenting the interface.",
+        "Model capability was early, context windows were smaller, and hallucination risk was unacceptable in a legal setting.",
       outcome:
-        "30 % increase in weekly active users after redesign; API key sign-ups rose 25 %.",
+        "Delivered a novel assistant for its time by selecting context deliberately, structuring prompts carefully, and keeping responses tied to documents and known legal practice.",
     },
-    designFocus: [
+    metrics: [
+      "Built when GPT-3 era constraints made context selection and prompting far more manual",
+      "Grounded responses in case summaries, titles, and selected documents from project data",
+      "Added safeguards to reduce hallucination risk in a trust-sensitive domain",
+    ],
+    tags: ["LLM Integration", "Legal Tech", "Prompting", "Context Management"],
+    artifactLinks: [
       {
-        label: "Simplicity",
-        leftLabel: "Complex",
-        rightLabel: "Simple",
-        current: 5,
-        target: 5,
+        label: "Public-safe Product Writeup",
+        kind: "writeup",
+        href: "/projects/caret-ai-legal-assistant",
+        note: "Focuses on context strategy and trust model, not internal code.",
+      },
+    ],
+    architecture: [
+      {
+        title: "Document-grounded response flow",
+        summary:
+          "The assistant used case summaries and metadata to decide which documents to pull into the prompt so answers stayed tied to case context.",
+        bullets: [
+          "Titles and summaries acted as a routing layer for context selection.",
+          "Prompt construction favored grounding and restraint over broad open-ended generation.",
+          "Trust came from bounded context, not model confidence alone.",
+        ],
+      },
+    ],
+    decisions: [
+      {
+        title: "Select context before prompting",
+        summary:
+          "Given the limitations of early models, deliberate document selection mattered more than trying to dump everything into a single prompt.",
       },
       {
-        label: "Result Clarity",
-        leftLabel: "Technical",
-        rightLabel: "Approachable",
-        current: 4,
-        target: 5,
-      },
-      {
-        label: "Speed Perception",
-        leftLabel: "Slow",
-        rightLabel: "Instant",
-        current: 4,
-        target: 5,
-      },
-      {
-        label: "Power-user Depth",
-        leftLabel: "Surface",
-        rightLabel: "Deep",
-        current: 3,
-        target: 4,
-      },
-      {
-        label: "Trust Signaling",
-        leftLabel: "Weak",
-        rightLabel: "Strong",
-        current: 4,
-        target: 5,
+        title: "Design for restraint in a legal domain",
+        summary:
+          "The product needed to answer from evidence and accepted practice, not improvise.",
       },
     ],
   },
   {
-    slug: "abuse-mailbox",
-    name: "Abuse Mailbox",
-    category: "dashboard",
-    company: "Bolster",
-    status: "shipped",
-    updatedAt: "2022-11",
-    description:
-      "Automated triage system for abuse@ inboxes that classifies, prioritizes, and routes inbound phishing reports using machine learning.",
-    thumbnail: "/images/projects/abuse-mailbox/thumbnail.png",
-    images: [
-      "/images/projects/abuse-mailbox/01.png",
-      "/images/projects/abuse-mailbox/02.png",
-    ],
-    overview: {
-      type: "Internal Operations Tool",
-      role: "Product Designer",
-      tool: "Figma",
-      contribution: "Full product design from discovery to delivery.",
-    },
-    snapshot: {
-      goal: "Help enterprise abuse teams process thousands of inbound reports per day without manual triage.",
-      challenge:
-        "Designing for a workflow that mixes high automation with necessary human override, ensuring analysts trust the ML classifications.",
-      outcome:
-        "Customers using Abuse Mailbox reported 80 % reduction in manual triage time; became a key enterprise upsell.",
-    },
-    designFocus: [
-      {
-        label: "Automation Confidence",
-        leftLabel: "Low trust",
-        rightLabel: "High trust",
-        current: 4,
-        target: 5,
-      },
-      {
-        label: "Bulk Actions",
-        leftLabel: "One-by-one",
-        rightLabel: "Bulk",
-        current: 5,
-        target: 5,
-      },
-      {
-        label: "Integration Depth",
-        leftLabel: "Standalone",
-        rightLabel: "Integrated",
-        current: 3,
-        target: 4,
-      },
-      {
-        label: "Audit Trail",
-        leftLabel: "None",
-        rightLabel: "Full",
-        current: 4,
-        target: 4,
-      },
-      {
-        label: "Customization",
-        leftLabel: "Fixed",
-        rightLabel: "Configurable",
-        current: 3,
-        target: 4,
-      },
-    ],
-  },
-
-  // ── App ──────────────────────────────────────────────────────────────────────
-  {
-    slug: "listyle-ai",
-    name: "LiStyle AI",
-    category: "app",
-    status: "concept",
-    updatedAt: "2024-08",
-    description:
-      "AI personal-styling app that learns your wardrobe, lifestyle, and aesthetic preferences to generate daily outfit recommendations.",
-    thumbnail: "/images/projects/listyle-ai/thumbnail.png",
-    images: [
-      "/images/projects/listyle-ai/01.png",
-      "/images/projects/listyle-ai/02.png",
-      "/images/projects/listyle-ai/03.png",
-    ],
-    overview: {
-      type: "Consumer Mobile App",
-      role: "Solo Designer",
-      tool: "Figma, ProtoPie",
-      contribution: "Concept, UX research, UI design, and prototype.",
-    },
-    snapshot: {
-      goal: "Make professional styling advice accessible and personalized through an AI-first mobile experience.",
-      challenge:
-        "Onboarding users to teach the AI their style without feeling like a tedious survey; making recommendations feel personal, not algorithmic.",
-      outcome:
-        "Concept prototype tested with 12 participants — 10 said they would use it weekly. Pursuing development partnerships.",
-    },
-    designFocus: [
-      {
-        label: "Personalization Depth",
-        leftLabel: "Generic",
-        rightLabel: "Personal",
-        current: 5,
-        target: 5,
-      },
-      {
-        label: "Onboarding Delight",
-        leftLabel: "Tedious",
-        rightLabel: "Delightful",
-        current: 4,
-        target: 5,
-      },
-      {
-        label: "Visual Polish",
-        leftLabel: "Functional",
-        rightLabel: "Premium",
-        current: 5,
-        target: 5,
-      },
-      {
-        label: "AI Explainability",
-        leftLabel: "Black-box",
-        rightLabel: "Transparent",
-        current: 3,
-        target: 4,
-      },
-      {
-        label: "Wardrobe Management",
-        leftLabel: "Basic",
-        rightLabel: "Comprehensive",
-        current: 4,
-        target: 5,
-      },
-    ],
-  },
-
-  // ── Websites ─────────────────────────────────────────────────────────────────
-  {
-    slug: "bolster-ai-website",
-    name: "Bolster AI Website",
-    category: "website",
-    company: "Bolster",
-    status: "concept",
-    updatedAt: "2024-03",
-    description:
-      "Full marketing-site redesign for Bolster, repositioning the brand as an AI-native cybersecurity leader.",
-    thumbnail: "/images/projects/bolster-ai-website/thumbnail.png",
-    images: [
-      "/images/projects/bolster-ai-website/01.png",
-      "/images/projects/bolster-ai-website/02.png",
-    ],
-    overview: {
-      type: "Marketing Website",
-      role: "Lead Designer",
-      tool: "Figma, Framer",
-      contribution: "Brand strategy, design, and Framer build.",
-    },
-    snapshot: {
-      goal: "Align the public-facing brand with Bolster's pivot to AI-first positioning and differentiate from legacy DMARC vendors.",
-      challenge:
-        "Translating a highly technical product story into a narrative that resonates with both CISOs and practitioners.",
-      outcome:
-        "Concept approved by executive team; design direction adopted for the live site refresh.",
-    },
-    designFocus: [
-      {
-        label: "Brand Alignment",
-        leftLabel: "Off-brand",
-        rightLabel: "On-brand",
-        current: 5,
-        target: 5,
-      },
-      {
-        label: "Messaging Clarity",
-        leftLabel: "Jargon-heavy",
-        rightLabel: "Clear",
-        current: 4,
-        target: 5,
-      },
-      {
-        label: "Visual Storytelling",
-        leftLabel: "Static",
-        rightLabel: "Dynamic",
-        current: 4,
-        target: 5,
-      },
-      {
-        label: "SEO Architecture",
-        leftLabel: "Flat",
-        rightLabel: "Structured",
-        current: 3,
-        target: 4,
-      },
-      {
-        label: "Conversion Optimization",
-        leftLabel: "Passive",
-        rightLabel: "Active",
-        current: 4,
-        target: 5,
-      },
-    ],
-  },
-  {
-    slug: "popmart",
-    name: "POPMART",
-    category: "website",
+    slug: "spreadsheet-engine",
+    name: "Spreadsheet Engine",
+    category: "platform",
     status: "live-demo",
-    updatedAt: "2023-12",
-    description:
-      "E-commerce concept redesign for POPMART's collectible toy brand — blending editorial design with seamless shopping UX.",
-    thumbnail: "/images/projects/popmart/thumbnail.png",
-    images: [
-      "/images/projects/popmart/01.png",
-      "/images/projects/popmart/02.png",
-      "/images/projects/popmart/03.png",
-    ],
+    updatedAt: "2026-04",
+    summary:
+      "A spreadsheet engine with formula evaluation, dependency tracking, circular reference handling, and tests. Old repo, but still one of the clearest public examples of how I structure logic-heavy code.",
+    headline:
+      "Public proof of core engineering habits: data structures, evaluation logic, boundaries, and tests.",
+    featured: true,
+    confidentiality: "public",
     overview: {
-      type: "E-commerce Website",
-      role: "Solo Designer",
-      tool: "Figma, Framer",
-      contribution: "UX research, UI design, and interactive prototype.",
+      role: "Solo developer",
+      scope: "Core logic, parser/evaluator work, dependency management, tests",
+      stack: "C#, .NET, unit tests",
+      ownership:
+        "Built the spreadsheet model, formula handling, dependency graph behavior, and supporting tests.",
     },
     snapshot: {
-      goal: "Redesign the POPMART shopping experience to match the brand's premium collectible positioning and reduce cart abandonment.",
+      goal: "Implement the core behavior of a spreadsheet system with enough rigor to manage formulas, dependencies, and invalid states correctly.",
       challenge:
-        "The existing site treated blind-box collectibles like commodity products; the redesign needed to surface the joy and surprise of the category.",
+        "The hard part was not the grid. It was evaluation order, dependency tracking, circular reference detection, and keeping responsibilities separated.",
       outcome:
-        "Live Framer demo; concept shared on Dribbble with 2.4k views and 180+ likes.",
+        "Produced a clean public artifact that still shows how I think about decomposition, correctness, and testability.",
     },
-    designFocus: [
+    metrics: [
+      "Supports formula evaluation and dependency graphs",
+      "Handles circular dependency and invalid formula cases",
+      "Includes multiple test projects around evaluator and spreadsheet behavior",
+    ],
+    tags: ["C#", "Data Structures", "Testing", "Parsing", "Public Repo"],
+    artifactLinks: [
       {
-        label: "Brand Expression",
-        leftLabel: "Generic",
-        rightLabel: "Distinctive",
-        current: 5,
-        target: 5,
+        label: "GitHub Repository",
+        kind: "repo",
+        href: "https://github.com/TateRCXVII/my-spreadsheet",
       },
       {
-        label: "Product Storytelling",
-        leftLabel: "Minimal",
-        rightLabel: "Rich",
-        current: 5,
-        target: 5,
+        label: "Project Notes",
+        kind: "writeup",
+        href: "/projects/spreadsheet-engine",
+        note: "Portfolio framing for why this repo still matters.",
       },
+    ],
+    architecture: [
       {
-        label: "Checkout Friction",
-        leftLabel: "High",
-        rightLabel: "Frictionless",
-        current: 4,
-        target: 5,
+        title: "Dependency-driven evaluation",
+        summary:
+          "The spreadsheet separates formula handling, dependency tracking, and evaluation so updates propagate correctly and invalid states can be contained.",
+        bullets: [
+          "Dependency graph tracks relationships between referenced cells.",
+          "Evaluation logic can reject circular references before they become runtime confusion.",
+          "Structure favors testability over tightly coupled GUI-first code.",
+        ],
       },
+    ],
+    decisions: [
       {
-        label: "Mobile Experience",
-        leftLabel: "Afterthought",
-        rightLabel: "Mobile-first",
-        current: 4,
-        target: 5,
+        title: "Keep formula logic and graph logic separate",
+        summary:
+          "Spreadsheet correctness depends on clear boundaries between parsing, dependency management, and resulting value updates.",
       },
+    ],
+    codeHighlights: [
       {
-        label: "Animation Quality",
-        leftLabel: "None",
-        rightLabel: "Cinematic",
-        current: 4,
-        target: 5,
+        title: "Formula and dependency boundaries",
+        file: "Formula / DependencyGraph",
+        snippet:
+          "Capabilities include:\n- Evaluating formulas\n- Building dependency graphs\n- Detecting circular dependencies\n- Validating cell variables and contents",
+        commentary:
+          "This repo is valuable because the responsibilities are explicit. Even as an older project, it shows the foundations I still care about.",
       },
     ],
   },
   {
-    slug: "viewing-rooms",
-    name: "Viewing Rooms",
-    category: "website",
-    status: "shipped",
-    updatedAt: "2022-06",
-    description:
-      "Virtual gallery platform allowing artists and galleries to host immersive online exhibitions with 3D room navigation.",
-    thumbnail: "/images/projects/viewing-rooms/thumbnail.png",
-    images: [
-      "/images/projects/viewing-rooms/01.png",
-      "/images/projects/viewing-rooms/02.png",
-    ],
+    slug: "quant-research-lab",
+    name: "Quant Research Lab",
+    category: "research",
+    status: "in-progress",
+    updatedAt: "2026-04",
+    summary:
+      "A new research track for market-data pipelines, backtests, and technical writeups. This section is intentionally honest: it is active work, not retroactive branding.",
+    headline:
+      "An active research lane for quantitative engineering, trading systems, and market experiments.",
+    confidentiality: "public",
     overview: {
-      type: "Virtual Gallery Platform",
-      role: "Product Designer",
-      tool: "Figma, Blender",
-      contribution: "UX design, 3D environment concepts, and UI system.",
+      role: "Researcher and builder",
+      scope: "Market data, experimentation, analysis, technical notes",
+      stack: "Python, notebooks, market APIs, data pipelines",
+      ownership:
+        "Defining the project from scratch as a public body of work around quant systems and disciplined experimentation.",
     },
     snapshot: {
-      goal: "Give independent artists gallery-quality exhibition capabilities without physical space or installation costs.",
+      goal: "Build a credible body of public work in quantitative engineering through small but real systems, experiments, and documented decisions.",
       challenge:
-        "3D web navigation is inherently disorienting — balancing spatial immersion with usability required extensive prototype testing.",
+        "The challenge is to stay rigorous and honest. The portfolio should show active research, not pretend this is already a mature trading platform.",
       outcome:
-        "Shipped and used by 40+ artists for virtual openings; average session duration 8.5 min (2× industry benchmark).",
+        "This will evolve into notebooks, architecture diagrams, and experiment writeups that make the research process visible.",
     },
-    designFocus: [
+    metrics: [
+      "Initial lane defined as active research instead of overstated production expertise",
+      "Planned outputs include factor experiments, data pipelines, and backtest notes",
+      "Will feed the library section with diagrams and research writeups",
+    ],
+    tags: ["Quant", "Research", "Python", "Market Data", "Experiments"],
+    artifactLinks: [
       {
-        label: "Spatial Immersion",
-        leftLabel: "Flat",
-        rightLabel: "3D",
-        current: 4,
-        target: 5,
-      },
-      {
-        label: "Artist Tools",
-        leftLabel: "Limited",
-        rightLabel: "Comprehensive",
-        current: 3,
-        target: 4,
-      },
-      {
-        label: "Accessibility",
-        leftLabel: "Exclusive",
-        rightLabel: "Inclusive",
-        current: 3,
-        target: 4,
-      },
-      {
-        label: "Load Performance",
-        leftLabel: "Heavy",
-        rightLabel: "Optimized",
-        current: 3,
-        target: 4,
-      },
-      {
-        label: "Social Features",
-        leftLabel: "None",
-        rightLabel: "Rich",
-        current: 2,
-        target: 3,
+        label: "Research Track",
+        kind: "notes",
+        href: "/projects/quant-research-lab",
+        note: "This project is a public commitment to build the lane seriously.",
       },
     ],
-  },
-  {
-    slug: "brand-domain-protection",
-    name: "Brand & Domain Protection",
-    category: "website",
-    company: "Bolster",
-    status: "shipped",
-    updatedAt: "2023-06",
-    description:
-      "Product marketing microsite for Bolster's Brand & Domain Protection suite, designed to drive enterprise lead generation.",
-    thumbnail: "/images/projects/brand-domain-protection/thumbnail.png",
-    images: [
-      "/images/projects/brand-domain-protection/01.png",
-      "/images/projects/brand-domain-protection/02.png",
-    ],
-    overview: {
-      type: "Product Marketing Page",
-      role: "Designer",
-      tool: "Figma",
-      contribution: "Design and content strategy.",
-    },
-    snapshot: {
-      goal: "Create a dedicated landing page for the Brand & Domain Protection product line to support enterprise sales cycles.",
-      challenge:
-        "Communicating a complex, multi-layered product in a format that works for both executive buyers and technical evaluators.",
-      outcome:
-        "Page became the highest-converting product page on the Bolster site with a 4.2 % form completion rate.",
-    },
-    designFocus: [
+    decisions: [
       {
-        label: "Value Proposition Clarity",
-        leftLabel: "Vague",
-        rightLabel: "Crystal clear",
-        current: 5,
-        target: 5,
-      },
-      {
-        label: "Social Proof",
-        leftLabel: "None",
-        rightLabel: "Abundant",
-        current: 4,
-        target: 4,
-      },
-      {
-        label: "CTA Placement",
-        leftLabel: "Hidden",
-        rightLabel: "Prominent",
-        current: 5,
-        target: 5,
-      },
-      {
-        label: "Technical Depth",
-        leftLabel: "Surface",
-        rightLabel: "Deep",
-        current: 3,
-        target: 4,
-      },
-      {
-        label: "Visual Hierarchy",
-        leftLabel: "Flat",
-        rightLabel: "Strong",
-        current: 4,
-        target: 5,
-      },
-    ],
-  },
-
-  // ── Visual ────────────────────────────────────────────────────────────────────
-  {
-    slug: "generative-data-art-i",
-    name: "Generative Data Art I",
-    category: "visual",
-    status: "shipped",
-    updatedAt: "2023-03",
-    description:
-      "A series of algorithmic artworks generated from public cybersecurity threat datasets — translating raw data into visual poetry.",
-    thumbnail: "/images/projects/generative-data-art-i/thumbnail.png",
-    images: [
-      "/images/projects/generative-data-art-i/01.png",
-      "/images/projects/generative-data-art-i/02.png",
-      "/images/projects/generative-data-art-i/03.png",
-    ],
-    overview: {
-      type: "Generative Art Series",
-      role: "Artist / Developer",
-      tool: "p5.js, JavaScript",
-      contribution: "Concept, data wrangling, algorithm design, and rendering.",
-    },
-    snapshot: {
-      goal: "Make abstract threat data emotionally resonant by expressing it through generative visual forms.",
-      challenge:
-        "Mapping numeric datasets to aesthetic outputs in a way that feels intentional rather than arbitrary required many iterations.",
-      outcome:
-        "Series of 12 prints exhibited at a local digital art showcase; two pieces sold as limited-edition giclée prints.",
-    },
-    designFocus: [
-      {
-        label: "Data Fidelity",
-        leftLabel: "Decorative",
-        rightLabel: "Data-driven",
-        current: 4,
-        target: 5,
-      },
-      {
-        label: "Aesthetic Quality",
-        leftLabel: "Utilitarian",
-        rightLabel: "Fine art",
-        current: 5,
-        target: 5,
-      },
-      {
-        label: "Algorithmic Complexity",
-        leftLabel: "Simple",
-        rightLabel: "Complex",
-        current: 4,
-        target: 4,
-      },
-      {
-        label: "Color Theory",
-        leftLabel: "Random",
-        rightLabel: "Intentional",
-        current: 5,
-        target: 5,
-      },
-      {
-        label: "Print Resolution",
-        leftLabel: "Screen-only",
-        rightLabel: "Print-ready",
-        current: 4,
-        target: 5,
-      },
-    ],
-  },
-  {
-    slug: "generative-data-art-ii",
-    name: "Generative Data Art II",
-    category: "visual",
-    status: "shipped",
-    updatedAt: "2024-01",
-    description:
-      "Second series exploring network topology data from real phishing infrastructure — rendered as constellation maps and flow fields.",
-    thumbnail: "/images/projects/generative-data-art-ii/thumbnail.png",
-    images: [
-      "/images/projects/generative-data-art-ii/01.png",
-      "/images/projects/generative-data-art-ii/02.png",
-    ],
-    overview: {
-      type: "Generative Art Series",
-      role: "Artist / Developer",
-      tool: "p5.js, D3.js, JavaScript",
-      contribution: "Concept, data pipeline, algorithm design, and rendering.",
-    },
-    snapshot: {
-      goal: "Evolve the first series by introducing graph-structure data and real-time rendering capabilities.",
-      challenge:
-        "Graph data is inherently messy; creating legible, beautiful compositions from noisy network topology required custom force-directed layouts.",
-      outcome:
-        "Featured in an online generative-art journal; open-source code repository received 340 GitHub stars.",
-    },
-    designFocus: [
-      {
-        label: "Data Fidelity",
-        leftLabel: "Decorative",
-        rightLabel: "Data-driven",
-        current: 5,
-        target: 5,
-      },
-      {
-        label: "Aesthetic Quality",
-        leftLabel: "Utilitarian",
-        rightLabel: "Fine art",
-        current: 5,
-        target: 5,
-      },
-      {
-        label: "Real-time Rendering",
-        leftLabel: "Static",
-        rightLabel: "Interactive",
-        current: 4,
-        target: 5,
-      },
-      {
-        label: "Color Theory",
-        leftLabel: "Random",
-        rightLabel: "Intentional",
-        current: 5,
-        target: 5,
-      },
-      {
-        label: "Code Quality",
-        leftLabel: "Prototype",
-        rightLabel: "Production",
-        current: 4,
-        target: 4,
-      },
-    ],
-  },
-
-  // ── Fun ───────────────────────────────────────────────────────────────────────
-  {
-    slug: "this-portfolio",
-    name: "This Portfolio",
-    category: "fun",
-    status: "live-demo",
-    updatedAt: "2025-03",
-    description:
-      "The very site you are browsing — a Next.js portfolio with custom animations, a book-style case-study reader, and generative backgrounds.",
-    thumbnail: "/images/projects/this-portfolio/thumbnail.png",
-    images: [
-      "/images/projects/this-portfolio/01.png",
-      "/images/projects/this-portfolio/02.png",
-    ],
-    overview: {
-      type: "Personal Portfolio",
-      role: "Designer & Developer",
-      tool: "Next.js, TypeScript, Tailwind, Framer Motion",
-      contribution: "Design, development, and content.",
-    },
-    snapshot: {
-      goal: "Build a portfolio that itself demonstrates the quality and range of my design and engineering capabilities.",
-      challenge:
-        "Avoiding the trap of over-engineering at the expense of content clarity; the work must remain the hero, not the chrome.",
-      outcome: "Live and in your hands right now.",
-    },
-    designFocus: [
-      {
-        label: "Self-expression",
-        leftLabel: "Neutral",
-        rightLabel: "Distinctive",
-        current: 5,
-        target: 5,
-      },
-      {
-        label: "Performance",
-        leftLabel: "Heavy",
-        rightLabel: "Lightweight",
-        current: 4,
-        target: 5,
-      },
-      {
-        label: "Animation Quality",
-        leftLabel: "None",
-        rightLabel: "Cinematic",
-        current: 5,
-        target: 5,
-      },
-      {
-        label: "Content Clarity",
-        leftLabel: "Busy",
-        rightLabel: "Clear",
-        current: 4,
-        target: 5,
-      },
-      {
-        label: "Code Quality",
-        leftLabel: "Prototype",
-        rightLabel: "Production",
-        current: 4,
-        target: 5,
-      },
-    ],
-  },
-  {
-    slug: "terminal-adventure",
-    name: "Terminal Adventure",
-    category: "fun",
-    status: "concept",
-    updatedAt: "2024-10",
-    description:
-      "A text-based CLI adventure game set inside a cybersecurity operations center — where you play an analyst fighting a live breach.",
-    thumbnail: "/images/projects/terminal-adventure/thumbnail.png",
-    images: [
-      "/images/projects/terminal-adventure/01.png",
-      "/images/projects/terminal-adventure/02.png",
-    ],
-    overview: {
-      type: "CLI Game / Interactive Fiction",
-      role: "Designer & Developer",
-      tool: "Node.js, Ink (React for CLI)",
-      contribution: "Narrative design, game logic, and terminal UI.",
-    },
-    snapshot: {
-      goal: "Build a playful, educational game that teaches basic security concepts through narrative rather than lectures.",
-      challenge:
-        "Designing compelling interactive fiction entirely within the constraints of a monospace terminal display.",
-      outcome:
-        "Playable prototype shared with security community; positive reception from educators looking for gamified training tools.",
-    },
-    designFocus: [
-      {
-        label: "Narrative Quality",
-        leftLabel: "Thin",
-        rightLabel: "Immersive",
-        current: 4,
-        target: 5,
-      },
-      {
-        label: "Educational Value",
-        leftLabel: "Entertainment",
-        rightLabel: "Instructional",
-        current: 4,
-        target: 4,
-      },
-      {
-        label: "Terminal Aesthetics",
-        leftLabel: "Plain",
-        rightLabel: "Stylized",
-        current: 5,
-        target: 5,
-      },
-      {
-        label: "Replayability",
-        leftLabel: "Linear",
-        rightLabel: "Branching",
-        current: 3,
-        target: 5,
-      },
-      {
-        label: "Accessibility",
-        leftLabel: "Technical",
-        rightLabel: "Approachable",
-        current: 3,
-        target: 4,
+        title: "Present as active research",
+        summary:
+          "The portfolio should show ambition and trajectory here without claiming production experience that does not exist yet.",
       },
     ],
   },
 ];
 
-// ── Helper functions ────────────────────────────────────────────────────────────
-
 export function getProjectBySlug(slug: string): Project | undefined {
-  return projects.find((p) => p.slug === slug);
+  return projects.find((project) => project.slug === slug);
 }
 
 export function getProjectsByCategory(category: string): Project[] {
   if (category === "all") return projects;
-  return projects.filter((p) => p.category === category);
+  return projects.filter((project) => project.category === category);
 }
 
 export const categoryLabels: Record<string, string> = {
   all: "All",
-  dashboard: "Dashboard",
-  app: "App",
-  website: "Website",
-  visual: "Visual",
-  fun: "Fun",
+  "ai-systems": "AI Systems",
+  platform: "Platform",
+  "product-engineering": "Product Engineering",
+  research: "Research",
+  security: "Security",
 };
 
 export const categoryCounts: Record<string, number> = {
   all: projects.length,
-  dashboard: projects.filter((p) => p.category === "dashboard").length,
-  app: projects.filter((p) => p.category === "app").length,
-  website: projects.filter((p) => p.category === "website").length,
-  visual: projects.filter((p) => p.category === "visual").length,
-  fun: projects.filter((p) => p.category === "fun").length,
+  "ai-systems": projects.filter((project) => project.category === "ai-systems").length,
+  platform: projects.filter((project) => project.category === "platform").length,
+  "product-engineering": projects.filter(
+    (project) => project.category === "product-engineering"
+  ).length,
+  research: projects.filter((project) => project.category === "research").length,
+  security: projects.filter((project) => project.category === "security").length,
 };

@@ -3,11 +3,11 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
 import {
-  Monitor,
-  Smartphone,
-  Globe,
-  Eye,
-  Sparkles,
+  Bot,
+  Layers3,
+  Wrench,
+  FlaskConical,
+  Shield,
 } from "lucide-react";
 import type { Project } from "@/data/types";
 import { categoryLabels } from "@/data/projects";
@@ -17,11 +17,11 @@ interface ProjectListRowProps {
 }
 
 const categoryIcons: Record<string, React.ReactNode> = {
-  dashboard: <Monitor size={14} />,
-  app: <Smartphone size={14} />,
-  website: <Globe size={14} />,
-  visual: <Eye size={14} />,
-  fun: <Sparkles size={14} />,
+  "ai-systems": <Bot size={14} />,
+  platform: <Layers3 size={14} />,
+  "product-engineering": <Wrench size={14} />,
+  research: <FlaskConical size={14} />,
+  security: <Shield size={14} />,
 };
 
 const statusConfig: Record<
@@ -29,16 +29,17 @@ const statusConfig: Record<
   { dot: string; label: string }
 > = {
   shipped: { dot: "bg-green-500", label: "Shipped" },
+  "in-progress": { dot: "bg-sky-500", label: "In Progress" },
   concept: { dot: "bg-pink-400", label: "Concept" },
   "live-demo": { dot: "bg-yellow-400", label: "Live Demo" },
 };
 
 const categoryGradients: Record<string, string> = {
-  dashboard: "from-blue-900 via-indigo-800 to-blue-700",
-  app: "from-purple-900 via-violet-800 to-purple-700",
-  website: "from-teal-900 via-emerald-800 to-teal-700",
-  visual: "from-rose-900 via-pink-800 to-rose-700",
-  fun: "from-amber-900 via-orange-800 to-amber-700",
+  "ai-systems": "from-emerald-950 via-zinc-900 to-emerald-800",
+  platform: "from-slate-950 via-slate-800 to-sky-900",
+  "product-engineering": "from-zinc-950 via-stone-800 to-amber-900",
+  research: "from-blue-950 via-indigo-900 to-cyan-900",
+  security: "from-rose-950 via-zinc-900 to-rose-900",
 };
 
 export default function ProjectListRow({ project }: ProjectListRowProps) {

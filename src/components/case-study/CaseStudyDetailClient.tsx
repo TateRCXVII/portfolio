@@ -2,13 +2,13 @@
 
 import { useState, useCallback } from "react";
 import { motion } from "framer-motion";
-import type { CaseStudy } from "@/data/types";
+import type { LibraryEntry } from "@/data/types";
 import TableOfContents from "@/components/case-study/TableOfContents";
 import StickyFooter from "@/components/shared/StickyFooter";
 import PageTransition from "@/components/shared/PageTransition";
 
-export default function CaseStudyDetailClient({ study }: { study: CaseStudy }) {
-  const { title, subtitle, bookColor, toc, content } = study;
+export default function CaseStudyDetailClient({ study }: { study: LibraryEntry }) {
+  const { title, subtitle, bookColor, toc, content, metadata } = study;
 
   const [flashedId, setFlashedId] = useState<string | null>(null);
 
@@ -54,6 +54,13 @@ export default function CaseStudyDetailClient({ study }: { study: CaseStudy }) {
                 {subtitle}
               </p>
             )}
+            <div className="mt-6 space-y-2 text-xs uppercase tracking-[0.3em] text-gray-400">
+              <p>{metadata.format}</p>
+              <p>{metadata.context}</p>
+            </div>
+            <p className="mt-4 max-w-xl text-sm leading-relaxed text-gray-600">
+              {metadata.takeaway}
+            </p>
           </div>
 
           {/* Decorative element at bottom */}

@@ -182,7 +182,7 @@ export default function SkillMatrixCard() {
       {/* Comment lines */}
       <div className="mt-3 flex flex-col items-end gap-0.5">
         <span className="font-mono text-[10px] text-dark-muted opacity-40">
-          {"// skill scores are self-assessed (total = 100)"}
+          {"// skill scores are directional, not absolute"}
         </span>
         <span className="font-mono text-[10px] text-dark-muted opacity-40">
           {"// always iterating, always improving"}

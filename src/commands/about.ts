@@ -4,14 +4,14 @@ registerCommand("about", "Learn about Tate Reynolds", () => {
   const output = [
     "┌─────────────────────────────────────────────┐",
     "│  Tate Reynolds                               │",
-    "│  Software Engineer                           │",
+    "│  Senior AI Software Engineer                 │",
     "│                                              │",
-    "│  From art spaces to digital systems, I       │",
-    "│  build thoughtful experiences at the          │",
-    "│  intersection of design and engineering.      │",
+    "│  I build AI-enabled developer systems,       │",
+    "│  full-stack product experiences, and         │",
+    "│  architecture-driven platform work.          │",
     "│                                              │",
-    "│  Currently based in San Francisco.            │",
-    "│  Previously: Boston, New York, Shanghai.      │",
+    "│  Based in Salt Lake City, Utah.              │",
+    "│  Focus: fintech, tooling, and systems.       │",
     "└─────────────────────────────────────────────┘",
   ].join("\n");
 

@@ -8,8 +8,9 @@ import NavPill from "./NavPill";
 
 const navItems = [
   { href: "/", label: "Dashboard" },
-  { href: "/projects", label: "Project" },
-  { href: "/case-study", label: "Case Study" },
+  { href: "/profile", label: "About" },
+  { href: "/projects", label: "Projects" },
+  { href: "/case-study", label: "Library" },
 ];
 
 export default function Navbar() {
